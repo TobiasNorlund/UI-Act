@@ -1,0 +1,18 @@
+{
+	"name": "tobiasnorlund/ui-act",
+	"build": {
+		"context": "..",
+		"dockerfile": "../Dockerfile",
+		"args": {
+			"DOCKER_WORKSPACE_PATH": "/workspace",
+			"DOCKER_UID": "1000",  // Just set a uid/gid, as vs code will override to user's actual uid/gid automatically
+			"DOCKER_GID": "1000"
+		}
+	},
+	"extensions": ["ms-python.python"],
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+	"workspaceFolder": "/workspace",
+	"remoteUser": "docker-user",
+	"mounts": ["source=tobiasnorlund-ui-act-home,target=/home/docker-user,type=volume"],
+	"runArgs": ["--ipc", "host", "--gpus", "all", "-v", "/tmp/.X11-unix:/tmp/.X11-unix", "-e", "DISPLAY"]
+}

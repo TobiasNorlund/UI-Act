@@ -1,0 +1,25 @@
+{
+    "text_conditioned": true,
+    "text_num_embeddings": 13,
+    "text_max_length": 10,
+    "text_hidden_dim": 64,
+    "text_num_heads": 4,
+    "text_ffn_dim": 256,
+    "text_num_layers": 2,
+    "text_dropout_p": 0.1,
+
+    "frame_input_channels": 3,
+    "frame_resolution": [1024, 576],
+    "frame_base_feature_maps": 32,
+    "frame_residual_layers": 8,
+    "frame_feature_maps": 64,
+    
+    "action_max_length": 10,
+    "action_hidden_dim": 64,
+    "action_num_heads": 2,
+    "action_ffn_dim": 128,
+    "action_num_layers": 4,
+    "action_dropout_p": 0.1,
+
+    "event_classes": ["left_click", "end"]
+}
