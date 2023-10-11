@@ -51,7 +51,7 @@ This demo model is very small, with a total of only 1.8M parameters. This makes 
 cd ~/UI-Act
 
 # Git pull latest version of repo
-git pull
+git pull -f
 
 # Run start script to build/run provided docker container
 ./start.sh
